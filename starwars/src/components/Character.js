@@ -1,26 +1,37 @@
 import React from 'react';
+import styled from 'styled-components';
 
 
-// birth_year: "19BBY"
-// eye_color: "blue"
-// gender: "male"
-// hair_color: "blond"
-// height: "172"
-// mass: "77"
-// name: "Luke Skywalker"
+const CharProfile = styled.div`
+    background-color: black;
+    width: 56%;
+    margin: 0 auto;
+    display: flex;
+    border: 2px dashed red;
+`;
+
+const CharName = styled.h3`
+    color: white;
+    font-size: 25px;
+    padding: 20px;
+`;
+
+const CharDetails = styled.p`
+    color: white;
+    padding: 20px;
+`;
 
 function Character(props) {
     return (
-        <div>
-            {console.log(props, 'here')}
-            <h3>{props.char.name}</h3>
-            <p>Birth Year: {props.char.birth_year}</p>
-            <p>Gender: {props.char.gender}</p>
-            <p>Eye Color: {props.char.eye_color}</p>
-            <p>Hair Color: {props.char.hair_color}</p>
-            <p>Height: {props.char.height}</p>
-            <p>Mass: {props.char.mass}</p>
-        </div>
+        <CharProfile>
+            <CharName>{props.char.name}</CharName>
+            <CharDetails>Birth Year: {props.char.birth_year}</CharDetails>
+            <CharDetails>Gender: {props.char.gender}</CharDetails>
+            <CharDetails>Eye Color: {props.char.eye_color}</CharDetails>
+            <CharDetails>Hair Color: {props.char.hair_color}</CharDetails>
+            <CharDetails>Height: {props.char.height}</CharDetails>
+            <CharDetails>Mass: {props.char.mass}</CharDetails>
+        </CharProfile>
     )
 }
 
